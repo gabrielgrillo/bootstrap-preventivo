@@ -43,10 +43,53 @@
     <main>
         <!-- il main sarà composto da 1 riga e 2 colonne,
         di cui la prima (FORM) colonna ulteriormente suddivisa(riga e colonna dentro la colonna)-->
-        <div class="container text-center">
+
+        <div class="container w-75">
+            <p class="fs-2 fw-semibold">Richiesta preventivo</p>
+            <p class="fs-6">Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
             <div class="row">
-                <div class="col"> <!--colonna form-->
-                    Column1
+                <div class="col-8"> <!--colonna form-->
+                    <form class="row g-3" id="form">
+                        <!--COLONNA NOME-->
+                        <div class="col-md-12">
+                            <label for="text-km" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="text-km">
+                        </div>
+                        <!--COLONNA COGNOME-->
+                        <div class="col-md-12">
+                            <label for="text-km" class="form-label">Cognome</label>
+                            <input type="text" class="form-control" id="text-km">
+                        </div>
+                        <!--COLONNA MAIL-->
+                        <div class="col-md-12">
+                            <label for="text-km" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="text-km">
+                        </div>
+                        <!--COLONNA SELECT-->
+                        <div class="col-md-12">
+                            <label for="inputEta" class="form-label">Tipo di lavoro</label>
+                            <select id="inputEta" class="form-select">
+                                <option value="0">Seleziona il tipo di lavoro</option>
+                                <option value="1">Backend Development</option>
+                                <option value="2">Frontend Development</option>
+                                <option value="3">Project Analysis</option>
+                            </select>
+                        </div>
+                        <!--COLONNA TEXTAREA-->
+                        <div class="col-md-12">
+                            <label for="text-prezzo" class="form-label">Aggiungi eventuali dettagli</label>
+                            <textarea class="form-control" id="text-area" value="" rows="3"></textarea>
+                        </div>
+                        <!--COLONNA CODICE PROMOZIONALE-->
+                        <div class="col-md-12">
+                            <label for="text-km" class="form-label">Codice promozionale (opzionale)</label>
+                            <input type="text" class="form-control" id="text-km">
+                        </div>
+                        <!--BOTTONE SUBMIT-->
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Calcola preventivo</button>
+                        </div>
+                    </form>
                     <div class="row">
                         <div class="col"> <!--colonna sumbit-->
                             Column1
@@ -56,8 +99,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="col"> <!--colonna card-->
-                    Column2
+                <div class="col-4"> <!--COLONNA CARD-->
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/foto-card.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
