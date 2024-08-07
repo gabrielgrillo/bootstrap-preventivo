@@ -1,6 +1,6 @@
 /* EVENTUALI MODIFICHE STILE */
 
-main {
-    margin: 0 auto;
-    width: 80%;
+* {
+    margin: 0;
+    box-sizing: border-box;
 }
