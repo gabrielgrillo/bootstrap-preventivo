@@ -17,3 +17,10 @@ Se l’utente inserisce un codice promozionale valido, ha diritto ad uno sconto 
 Il risultato del calcolo del prezzo finale deve essere visualizzato in “forma umana” (con 2 decimali e il simbolo dell’euro).
 
 Step BONUS (facoltativo)*/
+
+// assegnazione importo da pagare per ogni lavoro
+let backEnd = 20.50 * 10
+let frontEnd = 15.30 * 10
+let analysis = 33.60 * 10
+
+console.log(backEnd, frontEnd, analysis)

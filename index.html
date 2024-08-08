@@ -14,7 +14,7 @@
 
     <header> <!-- Inserire navbar nel header-->
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary " data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3" data-bs-theme="dark">
             <div class="container-fluid w-75"> <!-- w-75 imposta max-width 75%-->
                 <a class="navbar-brand" href="#">Bool Factory</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -48,29 +48,29 @@
 
             <div class="row">
                 <div class="col-lg-8 col-md-12">
-                    <p class="fs-2 fw-semibold mb-0 py-2">Richiesta preventivo</p>
+                    <p class="fs-2 fw-semibold">Richiesta preventivo</p>
                     <p class="fs-6">Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
                     <!--colonna form-->
                     <form class="row g-3" id="form">
                         <!--COLONNA NOME-->
                         <div class="col-md-12">
-                            <label for="text-km" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="text-km">
+                            <label for="text-nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="text-nome">
                         </div>
                         <!--COLONNA COGNOME-->
                         <div class="col-md-12">
-                            <label for="text-km" class="form-label">Cognome</label>
-                            <input type="text" class="form-control" id="text-km">
+                            <label for="text-cognome" class="form-label">Cognome</label>
+                            <input type="text" class="form-control" id="text-cognome">
                         </div>
                         <!--COLONNA MAIL-->
                         <div class="col-md-12">
-                            <label for="text-km" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="text-km">
+                            <label for="text-email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="text-email">
                         </div>
                         <!--COLONNA SELECT-->
                         <div class="col-md-12">
-                            <label for="inputEta" class="form-label">Tipo di lavoro</label>
-                            <select id="inputEta" class="form-select">
+                            <label for="inputLavoro" class="form-label">Tipo di lavoro</label>
+                            <select id="inputLavoro" class="form-select">
                                 <option value="0">Seleziona il tipo di lavoro</option>
                                 <option value="1">Backend Development</option>
                                 <option value="2">Frontend Development</option>
@@ -79,13 +79,13 @@
                         </div>
                         <!--COLONNA TEXTAREA-->
                         <div class="col-md-12">
-                            <label for="text-prezzo" class="form-label">Aggiungi eventuali dettagli</label>
-                            <textarea class="form-control" id="text-area" value="" rows="3"></textarea>
+                            <label for="text-dettagli" class="form-label">Aggiungi eventuali dettagli</label>
+                            <textarea class="form-control" id="text-dettagli" value="" rows="3"></textarea>
                         </div>
                         <!--COLONNA CODICE PROMOZIONALE-->
                         <div class="col-md-12">
-                            <label for="text-km" class="form-label">Codice promozionale (opzionale)</label>
-                            <input type="text" class="form-control" id="text-km">
+                            <label for="text-codice" class="form-label">Codice promozionale (opzionale)</label>
+                            <input type="text" class="form-control" id="text-codice">
                         </div>
                         <!--CASELLA CHECK-->
                         <div class="form-check">
@@ -101,13 +101,14 @@
 
                         <!--PREZZO FINALE-->
                         <div class="col-lg-6 col-md-12 text-center">
-                            <label for="text-km" class="form-label">Prezzo finale</label>
-                            <p>importo da calcolare €</p>
+                            <label for="text-prezzo" class="form-label">Prezzo finale</label>
+                            <p><label for="text-importo" class="form-label" id="text-importo"> da calcolare €</label>
+                            </p>
                         </div>
                     </form>
 
                 </div>
-                <div class="col-lg-4 col-md-12 py-3"> <!--COLONNA CARD-->
+                <div class="col-lg-4 col-md-12"> <!--COLONNA CARD-->
                     <div class="card" style="width: 300px;">
                         <img src="./img/foto-card.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
