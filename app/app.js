@@ -40,7 +40,6 @@ let backEnd = 20.50 * 10
 let frontEnd = 15.30 * 10
 let analysis = 33.60 * 10
 
-console.log(backEnd, frontEnd, analysis,)
 
 //PREVENIRE CHE IL FORM VENGA INVIATO
 formElement.addEventListener("submit", function (e) {
@@ -48,22 +47,39 @@ formElement.addEventListener("submit", function (e) {
     //VALORE DELL'INPUT PROMOZIONE
     let promozioneElementValue = promozioneElement.value
 
+
     //VALORE SELEZIONE LAVORO
     let lavoro = lavoroElement.value
+    if (discount(promozioneElementValue) === true) {
+        backEnd = backEnd * 0.8
+        frontEnd = frontEnd * 0.8
+        analysis = analysis * 0.8
+    }
 
     //CONTROLLO TIPO DI LAVORO
-    if (lavoro == 'BD') {
+    if (lavoro == '0') {
+        prezzoFinaleElement.innerHTML = `Seleziona il tipo di lavoro`
+    }
+    else if (lavoro == 'BD') {
         prezzoFinaleElement.innerHTML = `€ ${backEnd.toFixed(2)}`
     }
-
-    //CONTROLLO CODICE SCONTO
-    if (discountCodes.includes(promozioneElementValue)) {
-        console.log('ok')
-        return true
+    else if (lavoro == 'FD') {
+        prezzoFinaleElement.innerHTML = `€ ${frontEnd.toFixed(2)}`
     }
-    else {
-        console.log('no ok')
-        return false
+    else if (lavoro == 'PA') {
+        prezzoFinaleElement.innerHTML = `€ ${analysis.toFixed(2)}`
+    }
+
+    // FUNZIONE CONTROLLO CODICE SCONTO
+    function discount(promozioneElementValue) {
+        if (discountCodes.includes(promozioneElementValue)) {
+            console.log('ok')
+            return true
+        }
+        else {
+            console.log('no ok')
+            return false
+        }
     }
 })
 
