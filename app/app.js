@@ -24,10 +24,12 @@ const prezzoFinaleElement = document.getElementById("text-importo")
 // RECUPERATO CODICE PROMOZIONALE DAL DOM --> FARE CONFRONTO if
 const promozioneElement = document.getElementById("text-codice")
 
-
-
 // RECUPERATO FORM DAL DOM
 const formElement = document.getElementById("form")
+
+//ARRAY CHE CONTIENE I CODICI PROMO
+let discountCodes = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24']
+// console.log(discountCodes[3])
 
 // assegnazione importo da pagare per ogni lavoro
 let backEnd = 20.50 * 10
