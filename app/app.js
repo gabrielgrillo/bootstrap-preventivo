@@ -1,7 +1,7 @@
 console.log('Milestone')
 
 /*Aggiungiamo la componente js di interazione con l’utente.
-Quando l’utente fa click sul bottone submit del form, il sito deve calcolare l’ammontare del preventivo per le ore di lavoro richieste. 
+Quando l’utente fa click sul bottone submit del form, il sito deve calcolare l’ammontare del preventivo per le ore di lavoro richieste.
 
 Il prezzo finale è dato dal numero di ore per prezzo orario. Supponiamo per semplicità che ogni progetto richieda lo stesso numero di ore di lavoro (es: 10 ore).
 
@@ -21,8 +21,11 @@ Step BONUS (facoltativo)*/
 // RECUPERATO ELEMENTO PREZZO FINALE DAL DOM
 const prezzoFinaleElement = document.getElementById("text-importo")
 
-// RECUPERATO CODICE PROMOZIONALE DAL DOM --> FARE CONFRONTO if
+// RECUPERATO INPUT PROMOZIONE DAL DOM --> FARE CONFRONTO if
 const promozioneElement = document.getElementById("text-codice")
+
+//RECUPERATO INPUT LAVORO DAL DOM
+const lavoroElement = document.getElementById("inputLavoro")
 
 // RECUPERATO FORM DAL DOM
 const formElement = document.getElementById("form")
@@ -31,6 +34,7 @@ const formElement = document.getElementById("form")
 let discountCodes = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24']
 // console.log(discountCodes[3])
 
+
 // assegnazione importo da pagare per ogni lavoro
 let backEnd = 20.50 * 10
 let frontEnd = 15.30 * 10
@@ -38,20 +42,31 @@ let analysis = 33.60 * 10
 
 console.log(backEnd, frontEnd, analysis,)
 
-// let promozioneElementValue
-
 //PREVENIRE CHE IL FORM VENGA INVIATO
 formElement.addEventListener("submit", function (e) {
     e.preventDefault()
-    const promozioneElementValue = promozioneElement.value
+    //VALORE DELL'INPUT PROMOZIONE
+    let promozioneElementValue = promozioneElement.value
 
-    // CONFRONTO PER CODICE SCONTO
+    //VALORE SELEZIONE LAVORO
+    let lavoro = lavoroElement.value
 
-    if (promozioneElementValue === 'YHDNU32' || 'JANJC63' || 'PWKCN25' || 'SJDPO96' || 'POCIE24') {
-        backEnd = backEnd * 0.8
-        console.log(promozioneElementValue, backEnd)
+    //CONTROLLO TIPO DI LAVORO
+    if (lavoro == 'BD') {
+        prezzoFinaleElement.innerHTML = `€ ${backEnd.toFixed(2)}`
     }
 
+    //CONTROLLO CODICE SCONTO
+    if (discountCodes.includes(promozioneElementValue)) {
+        console.log('ok')
+        return true
+    }
+    else {
+        console.log('no ok')
+        return false
+    }
 })
+
+
 
 
