@@ -18,9 +18,38 @@ Il risultato del calcolo del prezzo finale deve essere visualizzato in “forma 
 
 Step BONUS (facoltativo)*/
 
+// RECUPERATO ELEMENTO PREZZO FINALE DAL DOM
+const prezzoFinaleElement = document.getElementById("text-importo")
+
+// RECUPERATO CODICE PROMOZIONALE DAL DOM --> FARE CONFRONTO if
+const promozioneElement = document.getElementById("text-codice")
+
+
+
+// RECUPERATO FORM DAL DOM
+const formElement = document.getElementById("form")
+
 // assegnazione importo da pagare per ogni lavoro
 let backEnd = 20.50 * 10
 let frontEnd = 15.30 * 10
 let analysis = 33.60 * 10
 
-console.log(backEnd, frontEnd, analysis)
+console.log(backEnd, frontEnd, analysis,)
+
+// let promozioneElementValue
+
+//PREVENIRE CHE IL FORM VENGA INVIATO
+formElement.addEventListener("submit", function (e) {
+    e.preventDefault()
+    const promozioneElementValue = promozioneElement.value
+
+    // CONFRONTO PER CODICE SCONTO
+
+    if (promozioneElementValue === 'YHDNU32' || 'JANJC63' || 'PWKCN25' || 'SJDPO96' || 'POCIE24') {
+        backEnd = backEnd * 0.8
+        console.log(promozioneElementValue, backEnd)
+    }
+
+})
+
+
