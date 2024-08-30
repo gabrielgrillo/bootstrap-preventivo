@@ -71,15 +71,12 @@ formElement.addEventListener("submit", function (e) {
     }
 
     // FUNZIONE CONTROLLO CODICE SCONTO
-    function discount(promozioneElementValue) {
-        if (discountCodes.includes(promozioneElementValue)) {
+    function discount(e) {
+        if (discountCodes.includes(e)) {
             console.log('ok')
             return true
         }
-        else {
-            console.log('no ok')
-            return false
-        }
+
     }
 })
 
