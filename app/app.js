@@ -54,6 +54,8 @@ formElement.addEventListener("submit", function (e) {
         backEnd = backEnd * 0.8
         frontEnd = frontEnd * 0.8
         analysis = analysis * 0.8
+
+        alert('Codice promozionale valido, Hai uno sconto del 20%')
     }
 
     //CONTROLLO TIPO DI LAVORO
